@@ -9,11 +9,11 @@ use opentelemetry_sdk::{
     Resource,
 };
 use opentelemetry_semantic_conventions::{
-    resource::{DEPLOYMENT_ENVIRONMENT, SERVICE_NAME, SERVICE_VERSION},
+    resource::{DEPLOYMENT_ENVIRONMENT_NAME, SERVICE_NAME, SERVICE_VERSION},
     SCHEMA_URL,
 };
+use opentelemetry_tracing::{MetricsLayer, OpenTelemetryLayer};
 use tracing_core::Level;
-use tracing_opentelemetry::{MetricsLayer, OpenTelemetryLayer};
 use tracing_subscriber::{layer::SubscriberExt, util::SubscriberInitExt};
 
 // Create a Resource that captures information about the entity for which telemetry is recorded.
@@ -22,7 +22,7 @@ fn resource() -> Resource {
         [
             KeyValue::new(SERVICE_NAME, env!("CARGO_PKG_NAME")),
             KeyValue::new(SERVICE_VERSION, env!("CARGO_PKG_VERSION")),
-            KeyValue::new(DEPLOYMENT_ENVIRONMENT, "develop"),
+            KeyValue::new(DEPLOYMENT_ENVIRONMENT_NAME, "develop"),
         ],
         SCHEMA_URL,
     )

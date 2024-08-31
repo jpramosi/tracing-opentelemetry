@@ -4,9 +4,9 @@ use opentelemetry_sdk::{
     export::trace::{ExportResult, SpanData, SpanExporter},
     trace::{Tracer, TracerProvider},
 };
+use opentelemetry_tracing::layer;
 use std::sync::{Arc, Mutex};
 use tracing::{instrument, Subscriber};
-use tracing_opentelemetry::layer;
 use tracing_subscriber::prelude::*;
 
 #[test]

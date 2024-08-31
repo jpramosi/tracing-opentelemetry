@@ -4,10 +4,10 @@ use opentelemetry_sdk::{
     export::trace::{ExportResult, SpanData, SpanExporter},
     trace::{Config, SpanLimits, Tracer, TracerProvider},
 };
+use opentelemetry_tracing::layer;
 use std::sync::{Arc, Mutex};
 use tracing::level_filters::LevelFilter;
 use tracing::Subscriber;
-use tracing_opentelemetry::layer;
 use tracing_subscriber::prelude::*;
 
 #[derive(Clone, Default, Debug)]

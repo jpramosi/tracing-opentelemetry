@@ -2,7 +2,7 @@ use criterion::{criterion_group, criterion_main, Criterion};
 use opentelemetry::metrics::noop::NoopMeterProvider;
 #[cfg(not(target_os = "windows"))]
 use pprof::criterion::{Output, PProfProfiler};
-use tracing_opentelemetry::MetricsLayer;
+use opentelemetry_tracing::MetricsLayer;
 use tracing_subscriber::{layer::SubscriberExt, util::SubscriberInitExt};
 
 fn metrics_events(c: &mut Criterion) {

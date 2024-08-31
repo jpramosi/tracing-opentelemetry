@@ -64,7 +64,7 @@ fn main() -> Result<(), Box<dyn StdError + Send + Sync + 'static>> {
         .build();
     global::set_tracer_provider(provider);
 
-    let opentelemetry = tracing_opentelemetry::layer().with_tracer(tracer);
+    let opentelemetry = opentelemetry_tracing::layer().with_tracer(tracer);
     tracing_subscriber::registry()
         .with(opentelemetry)
         .try_init()?;

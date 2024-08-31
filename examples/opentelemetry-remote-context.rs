@@ -2,7 +2,7 @@ use opentelemetry::{global, Context};
 use opentelemetry_sdk::propagation::TraceContextPropagator;
 use std::collections::HashMap;
 use tracing::span;
-use tracing_opentelemetry::OpenTelemetrySpanExt;
+use opentelemetry_tracing::OpenTelemetrySpanExt;
 use tracing_subscriber::layer::SubscriberExt;
 use tracing_subscriber::Registry;
 
@@ -25,7 +25,7 @@ fn build_example_carrier() -> HashMap<String, String> {
 fn main() {
     // Set a format for propagating context. This MUST be provided, as the default is a no-op.
     global::set_text_map_propagator(TraceContextPropagator::new());
-    let subscriber = Registry::default().with(tracing_opentelemetry::layer());
+    let subscriber = Registry::default().with(opentelemetry_tracing::layer());
 
     tracing::subscriber::with_default(subscriber, || {
         // Extract context from request headers

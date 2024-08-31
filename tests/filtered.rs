@@ -7,7 +7,7 @@ use opentelemetry_sdk::{
 use std::sync::{Arc, Mutex};
 use tracing::level_filters::LevelFilter;
 use tracing::Subscriber;
-use tracing_opentelemetry::layer;
+use opentelemetry_tracing::layer;
 use tracing_subscriber::prelude::*;
 
 #[derive(Clone, Default, Debug)]

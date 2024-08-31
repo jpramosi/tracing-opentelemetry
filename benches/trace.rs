@@ -45,7 +45,7 @@ fn many_enters(c: &mut Criterion) {
     {
         let provider = TracerProvider::default();
         let tracer = provider.tracer("bench");
-        let otel_layer = tracing_opentelemetry::layer()
+        let otel_layer = opentelemetry_tracing::layer()
             .with_tracer(tracer)
             .with_tracked_inactivity(false);
         let _subscriber = tracing_subscriber::registry()
@@ -58,7 +58,7 @@ fn many_enters(c: &mut Criterion) {
     {
         let provider = TracerProvider::default();
         let tracer = provider.tracer("bench");
-        let otel_layer = tracing_opentelemetry::layer()
+        let otel_layer = opentelemetry_tracing::layer()
             .with_tracer(tracer)
             .with_tracked_inactivity(true);
         let _subscriber = tracing_subscriber::registry()
@@ -103,7 +103,7 @@ fn many_children(c: &mut Criterion) {
     {
         let provider = TracerProvider::default();
         let tracer = provider.tracer("bench");
-        let otel_layer = tracing_opentelemetry::layer()
+        let otel_layer = opentelemetry_tracing::layer()
             .with_tracer(tracer)
             .with_tracked_inactivity(false);
         let _subscriber = tracing_subscriber::registry()
@@ -149,7 +149,7 @@ fn many_events(c: &mut Criterion) {
     {
         let provider = TracerProvider::default();
         let tracer = provider.tracer("bench");
-        let otel_layer = tracing_opentelemetry::layer()
+        let otel_layer = opentelemetry_tracing::layer()
             .with_tracer(tracer)
             .with_tracked_inactivity(false);
         let _subscriber = tracing_subscriber::registry()
@@ -165,7 +165,7 @@ fn many_events(c: &mut Criterion) {
 
         let provider = TracerProvider::builder().with_config(config).build();
         let tracer = provider.tracer("bench");
-        let otel_layer = tracing_opentelemetry::layer()
+        let otel_layer = opentelemetry_tracing::layer()
             .with_tracer(tracer)
             .with_tracked_inactivity(false);
         let _subscriber = tracing_subscriber::registry()

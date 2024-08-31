@@ -13,7 +13,7 @@ use opentelemetry_sdk::{
 
 use std::{fmt::Debug, sync::Arc};
 use tracing::Subscriber;
-use tracing_opentelemetry::MetricsLayer;
+use opentelemetry_tracing::MetricsLayer;
 use tracing_subscriber::prelude::*;
 
 const CARGO_PKG_VERSION: &str = env!("CARGO_PKG_VERSION");

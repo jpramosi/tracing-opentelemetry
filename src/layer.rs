@@ -65,7 +65,7 @@ where
 ///
 /// // Use the tracing subscriber `Registry`, or any other subscriber
 /// // that impls `LookupSpan`
-/// let subscriber = Registry::default().with(tracing_opentelemetry::layer());
+/// let subscriber = Registry::default().with(opentelemetry_tracing::layer());
 /// # drop(subscriber);
 /// ```
 pub fn layer<S>() -> OpenTelemetryLayer<S, noop::NoopTracer>
@@ -514,7 +514,7 @@ where
     /// # Examples
     ///
     /// ```no_run
-    /// use tracing_opentelemetry::OpenTelemetryLayer;
+    /// use opentelemetry_tracing::OpenTelemetryLayer;
     /// use tracing_subscriber::layer::SubscriberExt;
     /// use opentelemetry::trace::TracerProvider;
     /// use tracing_subscriber::Registry;
@@ -579,7 +579,7 @@ where
     ///     .tracer("trace_demo");
     ///
     /// // Create a layer with the configured tracer
-    /// let otel_layer = tracing_opentelemetry::layer().with_tracer(tracer);
+    /// let otel_layer = opentelemetry_tracing::layer().with_tracer(tracer);
     ///
     /// // Use the tracing subscriber `Registry`, or any other subscriber
     /// // that impls `LookupSpan`

@@ -277,7 +277,7 @@ impl<'a> Visit for MetricVisitor<'a> {
 /// etc.
 ///
 /// ```no_run
-/// use tracing_opentelemetry::MetricsLayer;
+/// use opentelemetry_tracing::MetricsLayer;
 /// use tracing_subscriber::layer::SubscriberExt;
 /// use tracing_subscriber::Registry;
 /// # use opentelemetry_sdk::metrics::SdkMeterProvider;

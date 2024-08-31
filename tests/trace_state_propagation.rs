@@ -12,7 +12,7 @@ use opentelemetry_sdk::{
 use std::collections::{HashMap, HashSet};
 use std::sync::{Arc, Mutex};
 use tracing::Subscriber;
-use tracing_opentelemetry::{layer, OpenTelemetrySpanExt};
+use opentelemetry_tracing::{layer, OpenTelemetrySpanExt};
 use tracing_subscriber::prelude::*;
 
 #[test]
